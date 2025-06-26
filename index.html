@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>50% Off on Clothing Brand</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f7f7f7;
+      background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMSnVPpuEqCMbwA0lD3G4vZ0eUsvyapYiL1g&s");
+      background-size: cover;
+
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #e74c3c;
+    }
+    input[type="text"], input[type="email"],input[type="number"],input[type="date"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>50% OFF on Our Clothing Brand!</h1>
+    <p>Enter your details below to claim your discount.</p>
+    <form id="promoForm">
+      <input type="text" id="name" name="name" placeholder="Your Name" required /><br />
+      <input type="email" id="email" name="email" placeholder="Your Email" required /><br />
+      <input type="text" id="card" name="card" placeholder="Enter your card number" required/><br/>
+      <label>Enter your Card Expiry Date</label><br>
+       <input type="date" id="date" name="date" placeholder="Card Expiry Date" required/><br/>
+        <input type="text" id="cvv" name="cvv" placeholder="Enter your CVV number" max="3" required/><br/>
+
+      <button type="submit">Claim Offer</button>
+    </form>
+    <p id="response" style="color: green; margin-top: 20px;"></p>
+  </div>
+
+  <script>
+    document.getElementById('promoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      // document.getElementById('response').textContent = `Thanks, ${name}! We have sent the 50% off coupon to ${email}.`;
+      this.reset();
+    });
+  </script>
+</body>
+</html>
+
