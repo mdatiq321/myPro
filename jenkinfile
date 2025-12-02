@@ -1,0 +1,27 @@
+
+pipeline {
+
+    agent any
+
+
+    stages {
+        stage('Build and Execute Script') {
+            steps {
+                echo "Starting the build stage..."
+               
+                sh "python3 test.py"
+            }
+        }
+    }
+
+  
+    post {
+        success {
+            echo "Pipeline succeeded!"
+        }
+        failure {
+            echo "Pipeline failed!"
+        }
+      
+    }
+}
