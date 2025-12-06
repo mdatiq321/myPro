@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build and Execute Script') {
             steps {
-                echo "Starting the build stage.."
+                echo "Starting build stage.."
                
                 sh "python3 test.py"
             }
