@@ -1,0 +1,30 @@
+
+pipeline {
+
+    agent any
+   triggers {
+        poll scm('* * * * *')    
+    }
+
+
+    stages {
+        stage('Build and Execute Script') {
+            steps {
+                echo "Starting build stage.."
+               
+                sh "python3 test.py"
+            }
+        }
+    }
+
+  
+    post {
+        success {
+            echo "Pipeline succeeded!"
+        }
+        failure {
+            echo "Pipeline failed!"
+        }
+      
+    }
+}
